@@ -92,11 +92,11 @@ const Header = () => {
         <nav className="flex items-center justify-between" aria-label="Global">
           <div className="flex ">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">Freespace</span>
               <img
                 className="h-8"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
+                src={`/assets/icons/logo${isDark ? "Dark" : "Light"}.png`}
+                alt="Freespace Logo"
               />
             </a>
           </div>
@@ -295,8 +295,9 @@ const Header = () => {
               </div>
             </div>
             <div className="text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-300 sm:text-6xl">
-                Data to enrich your online business
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-300 sm:text-5xl">
+                We Provide <span className="text-blue-700">Engineering</span>{" "}
+                Teams For You
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">
                 Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
