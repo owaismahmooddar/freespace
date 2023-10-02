@@ -1,4 +1,4 @@
-export const stackList = [
+export const shortStackList = [
   {
     id: 1,
     icon: "1",
@@ -83,6 +83,93 @@ export const stackList = [
     title: "digital Ocean",
     desc: "DigitalOcean is a cloud hosting provider that offers cloud computing services and Infrastructure as a Service (IaaS)",
   },
+];
+
+export const fullStackList = [
+  // {
+  //   id: 1,
+  //   icon: "1",
+  //   title: "Unity",
+  //   desc: "Cross-platform to create one of the extraordinary games while saving time and providing efficient work.",
+  // },
+  // {
+  //   id: 2,
+  //   icon: "2",
+  //   title: "Unreal",
+  //   desc: "We are creating iconic games with the help of the most potent 3-D creation tool of game development.",
+  // },
+  // {
+  //   id: 3,
+  //   icon: "3",
+  //   title: "React",
+  //   desc: "React is a free and open-source front-end JavaScript library for building user interfaces based on UI components.",
+  // },
+  // {
+  //   id: 4,
+  //   icon: "4",
+  //   title: "Node Js",
+  //   desc: "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on a JavaScript Engine and executes JavaScript code outside a web browser, which was designed to build scalable network applications.",
+  // },
+  // {
+  //   id: 5,
+  //   icon: "5",
+  //   title: "Python",
+  //   desc: "Programming language to support a fast and powerful work environment.",
+  // },
+  // {
+  //   id: 6,
+  //   icon: "6",
+  //   title: "AWS",
+  //   desc: "Amazon Web Service provides on-demand cloud computing platforms to help reduce costs and innovate faster.",
+  // },
+  // {
+  //   id: 7,
+  //   icon: "7",
+  //   title: "Redux",
+  //   desc: "Redux is an open-source JavaScript library for managing and centralizing application state.",
+  // },
+  // {
+  //   id: 8,
+  //   icon: "8",
+  //   title: "Photoshop",
+  //   desc: "Graphic editor to enhance pictures and characters to provide outstanding visuals.",
+  // },
+  // {
+  //   id: 9,
+  //   icon: "9",
+  //   title: "Illustrator",
+  //   desc: "The graphic editor is used to create vectors, drawings, and sketches.",
+  // },
+  // {
+  //   id: 10,
+  //   icon: "10",
+  //   title: "xD",
+  //   desc: "A prototyping tool for UI/UX design and collaborating tool to make wireframes, screen designs, and prototypes.",
+  // },
+  // {
+  //   id: 11,
+  //   icon: "11",
+  //   title: "Figma",
+  //   desc: "Design developing tool used by designers and developers to edit and comment on the current project.",
+  // },
+  // {
+  //   id: 12,
+  //   icon: "12",
+  //   title: "Maya",
+  //   desc: "Object-oriented programming language for implementing smart contacts on various blockchain platforms",
+  // },
+  // {
+  //   id: 13,
+  //   icon: "13",
+  //   title: "Solidity",
+  //   desc: "Object-oriented programming language for implementing smart contacts on various blockchain platforms.",
+  // },
+  // {
+  //   id: 14,
+  //   icon: "14",
+  //   title: "digital Ocean",
+  //   desc: "DigitalOcean is a cloud hosting provider that offers cloud computing services and Infrastructure as a Service (IaaS)",
+  // },
   {
     id: 15,
     icon: "15",

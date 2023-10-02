@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <>
       <footer className="text-center bg-gray-300 dark:bg-gray-900 text-gray-900 dark:text-gray-300 DBlock">
-        <div className="container px-6 pt-6">
+        <div className="px-6 pt-6">
           <div className="flex justify-center mb-6">
             <a
               href="#!"

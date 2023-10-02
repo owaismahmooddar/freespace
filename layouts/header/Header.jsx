@@ -8,15 +8,15 @@ import { toggleDarkMode } from "@/redux/appSlice";
 import { Dialog } from "@headlessui/react";
 
 const navigation = [
-  { name: "About Us", href: "#" },
-  { name: "Skills", href: "#" },
-  { name: "Process", href: "#" },
+  { name: "Skills", href: "#skills" },
+  { name: "Process", href: "#whyUs" },
+  { name: "About Us", href: "#aboutUs" },
 ];
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const Header = () => {
+const Header = ({ openModal }) => {
   const ref = useRef();
   const router = useRouter();
   const dispatch = useDispatch();
@@ -91,14 +91,13 @@ const Header = () => {
       <div className="px-6 py-6 lg:px-8 bg-gray-300 dark:bg-gray-700">
         <nav className="flex items-center justify-between" aria-label="Global">
           <div className="flex ">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Freespace</span>
+            <Link href="/" className="-m-1.5 p-1.5">
               <img
                 className="h-8"
                 src={`/assets/icons/logo${isDark ? "Dark" : "Light"}.png`}
                 alt="Freespace Logo"
               />
-            </a>
+            </Link>
           </div>
 
           <div className="flex lg:hidden">
@@ -118,8 +117,8 @@ const Header = () => {
                 >
                   <path
                     d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               ) : (
@@ -147,9 +146,9 @@ const Header = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 ></path>
               </svg>
             </button>
@@ -182,8 +181,8 @@ const Header = () => {
                 >
                   <path
                     d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               ) : (
@@ -199,20 +198,20 @@ const Header = () => {
               )}
             </button>
             <div className="hidden lg:flex lg:mr-6">
-              <a
-                href="#"
+              <button
+                onClick={() => openModal(true)}
                 className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300"
               >
                 Hire Developers
-              </a>
+              </button>
             </div>
             <div className="hidden lg:flex lg:justify-end">
-              <a
-                href="#"
+              <button
+                onClick={() => openModal(false)}
                 className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300"
               >
                 Apply For Job <span aria-hidden="true">&rarr;</span>
-              </a>
+              </button>
             </div>
           </div>
         </nav>
@@ -222,14 +221,13 @@ const Header = () => {
             className="fixed inset-0 z-10 overflow-y-auto bg-white dark:bg-gray-900 px-6 py-6 lg:hidden"
           >
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
-                <span className="sr-only">Your Company</span>
+              <Link href="/" className="-m-1.5 p-1.5">
                 <img
                   className="h-8"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt=""
+                  src={`/assets/icons/logo${isDark ? "Dark" : "Light"}.png`}
+                  alt="Freespace Logo"
                 />
-              </a>
+              </Link>
               <button
                 type="button"
                 className="text-gray-500 hover:bg-gray-400focus:outline-none focus:ring-2 focus:ring-gray-200 rounded-lg text-sm p-2 inline-flex items-center dark:text-gray-400 dark:hover:bg-gray-900 dark:focus:ring-gray-600"
@@ -243,81 +241,83 @@ const Header = () => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </button>
             </div>
             <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="-my-6 divide-y divide-gray-500/10 ml-6">
                 <div className="space-y-2 py-6">
                   {navigation.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
                       className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 dark:text-gray-300 hover:bg-gray-400/10 dark:hover:text-gray-400"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
                 <div className="py-6">
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 dark:text-gray-300 hover:bg-gray-400/10 dark:hover:text-gray-400"
-                  >
-                    Hire Developers
-                  </a>
-                  <a
-                    href="#"
+                  <div className="group flex relative">
+                    <button
+                      onClick={() => openModal()}
+                      className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 dark:text-gray-300 hover:bg-gray-400/10 dark:hover:text-gray-400"
+                    >
+                      Hire Developers
+                    </button>
+                  </div>
+                  <button
+                    onClick={() => openModal()}
                     className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 dark:text-gray-300 hover:bg-gray-400/10 dark:hover:text-gray-400"
                   >
                     Apply For Job
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           </Dialog.Panel>
         </Dialog>
       </div>
-      <main>
+      <main className="h-screen">
         <div className="relative px-6 lg:px-8">
           <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-            <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+            {/* <div className="hidden sm:mb-8 sm:flex sm:justify-center">
               <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 dark:text-gray-300 ring-1 ring-gray-900/10 dark:ring-gray-400 dark:hover:ring-gray-300 hover:ring-gray-900/20">
                 Announcing our next round of funding.{" "}
-                <a href="#" className="font-semibold text-indigo-600">
+                <Link href="#" className="font-semibold text-indigo-600">
                   <span className="absolute inset-0" aria-hidden="true" />
                   Read more <span aria-hidden="true">&rarr;</span>
-                </a>
+                </Link>
               </div>
-            </div>
+            </div> */}
             <div className="text-center">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-300 sm:text-5xl">
                 We Provide <span className="text-blue-700">Engineering</span>{" "}
                 Teams For You
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                fugiat aliqua.
+                Our mission is to digitalize imagination and provide
+                comprehensive business solutions through a dedicated remote
+                engineering team.
               </p>
-              <div className="mt-10 flex items-center justify-center gap-x-6">
-                <a
+              {/* <div className="mt-10 flex items-center justify-center gap-x-6">
+                <Link
                   href="#"
                   className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Get started
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
                   className="text-base font-semibold leading-7 text-gray-900 dark:text-gray-300"
                 >
                   Learn more <span aria-hidden="true">→</span>
-                </a>
-              </div>
+                </Link>
+              </div> */}
             </div>
           </div>
           <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">

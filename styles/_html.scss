@@ -71,8 +71,14 @@ label {
 
 ul,
 ol {
-  list-style: none;
+  list-style: disc;
   margin-bottom: 0;
+  margin-left: 1.4rem;
+
+  li{
+    margin-bottom: 0.3rem;
+
+  }
 }
 
 .FocusNone,
@@ -112,16 +118,29 @@ a:hover {
   background: transparent;
   @include BorRadius(10px);
 }
+.dark ::-webkit-scrollbar-track {
+  background: rgb(31 41 55);
+  @include BorRadius(10px);
+}
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: nth($color,2) !important;
+  background: nth($color,4) !important;
   @include BorRadius(10px);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: nth($color,2) !important;
+  background: nth($color,4) !important;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgb(29 78 216) !important;
+  @include BorRadius(10px);
+}
+
+/* Handle on hover */
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgb(29 78 216) !important;
 }
 /*========================input & select global style==============================*/
 input::-webkit-outer-spin-button,
