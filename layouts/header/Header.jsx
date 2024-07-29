@@ -284,7 +284,7 @@ const Header = ({ openModal }) => {
       </div>
       <main className="h-screen">
         <div className="relative px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+          <div className="mx-auto max-w-5xl py-32 ">
             {/* <div className="hidden sm:mb-8 sm:flex sm:justify-center">
               <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 dark:text-gray-300 ring-1 ring-gray-900/10 dark:ring-gray-400 dark:hover:ring-gray-300 hover:ring-gray-900/20">
                 Announcing our next round of funding.{" "}
@@ -295,15 +295,23 @@ const Header = ({ openModal }) => {
               </div>
             </div> */}
             <div className="text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-300 sm:text-5xl">
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-300 sm:text-8xl">
                 We Provide <span className="text-blue-700">Engineering</span>{" "}
                 Teams For You
               </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">
+              <p className="mt-6 text-lg sm:text-2xl leading-8 text-gray-600 dark:text-gray-400">
                 Our mission is to digitalize imagination and provide
                 comprehensive business solutions through a dedicated remote
                 engineering team.
               </p>
+              <div className="text-center mt-10">
+                <button
+                  onClick={() => openModal(true)}
+                  className="rounded-full bg-indigo-600 px-12 py-4 text-xl font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Hire Developers
+                </button>
+              </div>
               {/* <div className="mt-10 flex items-center justify-center gap-x-6">
                 <Link
                   href="#"
